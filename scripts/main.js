@@ -21,47 +21,90 @@ function handValue (hand) {
       parseInt(hand[i], 10);
       handArray.push(parseInt(hand[i], 10));
       console.log(handArray);
-    } else if (hand[i] !== 'A'){
-      parseInt(hand[i], 10);
-      handArray.push(parseInt(hand[i], 10));
-      console.log(handArray);
-    }
-
-  }
-  for (i = 0; i < handArray.length; i++) {
-    totalForA = handArray[i] + totalForA
-  }
-  console.log(totalForA);
-
-  for (var i = 0; i < hand.length; i++) {
-    if (hand[i] === 'A') {
-      if (totalForA <= 19) {
+    } else if (hand[i] === 'A') {
+      for (i = 0; i < handArray.length; i++) {
+        totalForA = handArray[i] + totalForA
+      }
+      console.log(totalForA);
+      if (totalForA <= 10) {
         hand[i] = '11';
         parseInt(hand[i], 10);
         handArray.push(parseInt(hand[i], 10));
         console.log(handArray);
-      } else {
+      } else if (totalForA > 9){
         hand[i] = '1'
         parseInt(hand[i], 10);
         handArray.push(parseInt(hand[i], 10));
         console.log(handArray);
       }
-    } else if (hand[i] !== 'A'){
-      return totalForA;
-    }
-    for (i = 0; i < handArray.length; i++) {
-      finalTotal = handArray[i] + finalTotal;
+    } else {
+      parseInt(hand[i], 10);
+      handArray.push(parseInt(hand[i], 10));
+      console.log(handArray);
     }
   }
 
+  for (i = 0; i < handArray.length; i++) {
+    total = handArray[i] + total
+  }
+  console.log(total);
 
-  console.log(finalTotal);
 
 
-  return finalTotal;
+  return total;
 }
 
 
+
+// THIS DIDN'T WORK
+
+/*function handValue (hand) {
+  var handArray = [];
+  var total = 0;
+  // var totalForA = 0;
+  for (var i = 0; i < hand.length; i++) {
+    if (hand[i] === 'J' || hand[i] === 'Q' || hand[i] === 'K') {
+      hand[i] = '10';
+      parseInt(hand[i], 10);
+      handArray.push(parseInt(hand[i], 10));
+      // console.log(handArray);
+      for (i = 0; i < handArray.length; i++) {
+        total = handArray[i] + total
+      }
+      // console.log(total);
+    } else if (hand[i] === 'A') {
+      if (total <= 19) {
+        hand[i] = '11';
+        parseInt(hand[i], 10);
+        handArray.push(parseInt(hand[i], 10));
+        // console.log(handArray);
+        for (i = 0; i < handArray.length; i++) {
+          total = handArray[i] + total;
+        }
+      } else {
+        hand[i] = '1'
+        parseInt(hand[i], 10);
+        handArray.push(parseInt(hand[i], 10));
+        // console.log(handArray);
+        for (i = 0; i < handArray.length; i++) {
+          total = handArray[i] + total;
+        }
+      }
+    } else {
+      parseInt(hand[i], 10);
+      handArray.push(parseInt(hand[i], 10));
+      // console.log(handArray);
+      for (i = 0; i < handArray.length; i++) {
+        total = handArray[i] + total
+      }
+    }
+  }
+
+  console.log(handArray)
+  console.log(total);
+  return total;
+}
+*/
 
 
 

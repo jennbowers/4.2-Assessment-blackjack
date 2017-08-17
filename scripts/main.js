@@ -22,8 +22,8 @@ function handValue (hand) {
       handArray.push(parseInt(hand[i], 10));
       console.log(handArray);
     } else if (hand[i] === 'A') {
-      for (i = 0; i < handArray.length; i++) {
-        totalForA = handArray[i] + totalForA
+      for (var j = 0; j < handArray.length; j++) {
+        totalForA = handArray[j] + totalForA;
       }
       console.log(totalForA);
       if (totalForA <= 10) {
@@ -32,7 +32,7 @@ function handValue (hand) {
         handArray.push(parseInt(hand[i], 10));
         console.log(handArray);
       } else if (totalForA > 9){
-        hand[i] = '1'
+        hand[i] = '1';
         parseInt(hand[i], 10);
         handArray.push(parseInt(hand[i], 10));
         console.log(handArray);
@@ -44,8 +44,8 @@ function handValue (hand) {
     }
   }
 
-  for (i = 0; i < handArray.length; i++) {
-    total = handArray[i] + total
+  for (var k = 0; k < handArray.length; k++) {
+    total = handArray[k] + total;
   }
   console.log(total);
 
